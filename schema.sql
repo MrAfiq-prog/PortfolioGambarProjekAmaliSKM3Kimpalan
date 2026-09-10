@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
   role TEXT NOT NULL DEFAULT 'student',
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE IF NOT EXISTS project_images (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER NOT NULL,
@@ -19,4 +20,6 @@ CREATE TABLE IF NOT EXISTS project_images (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-CREATE INDEX IF NOT EXISTS idx_project_images_user_project ON project_images(user_id, project_id);
+
+CREATE INDEX IF NOT EXISTS idx_project_images_user_project
+ON project_images(user_id, project_id);
