@@ -9,7 +9,7 @@ export async function POST(req) {
 
     const hash = await bcrypt.hash(b.password, 10);
 
-    const r = await db.execute({
+    const r = await db().execute({
       sql: 'INSERT INTO users (full_name,ic_number,batch_no,email,password_hash,role) VALUES (?,?,?,?,?,?) RETURNING *',
       args: [
         b.fullName,
