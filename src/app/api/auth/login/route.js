@@ -17,7 +17,7 @@ export async function POST(req) {
       ic_number: '-'
     };
   } else {
-    const r = await db.execute({
+    const r = await db().execute({
       sql: 'SELECT * FROM users WHERE email=?',
       args: [b.email.toLowerCase()]
     });
