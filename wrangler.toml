@@ -1,3 +1,4 @@
 name = "portfolio-gambar-projek-amali"
-main = ".next/server/cloudflare/pages.js"
+main = ".open-next/worker.js"
 compatibility_date = "2024-01-01"
+pages_build_output_dir = ".open-next"
